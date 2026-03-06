@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manasa Harikrishnan — Marketing & Communications Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cream: #faf5f0;
+            --blush: #f2e8e2;
+            --terracotta: #b85c4a;
+            --terracotta-light: #c97260;
+            --charcoal: #2c2825;
+            --muted: #7a6e68;
+            --card-bg: #edddd7;
+            --card-border: #e2cec7;
+            --folder-pink: #d4877a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ── NAV ── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 60px;
+            background: var(--cream);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--card-border);
+        }
+
+        .nav-name {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.02em;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--terracotta);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 60px 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            min-height: calc(100vh - 72px);
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--terracotta);
+            margin-bottom: 28px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-intro {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 440px;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 12px 28px;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-light);
+        }
+
+        .btn-outline {
+            padding: 12px 28px;
+            border: 1px solid var(--terracotta);
+            color: var(--terracotta);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero-photo-placeholder {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 3/4;
+            background: var(--card-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-border) 100%);
+        }
+
+        .hero-photo-placeholder .placeholder-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        /* actual photo */
+        .hero-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── SECTION COMMONS ── */
+        section {
+            padding: 80px 60px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .two-col-label {
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            color: var(--terracotta);
+            font-weight: 400;
+        }
+
+        .two-col-content {
+            max-width: 600px;
+        }
+
+        .two-col-content p {
+            color: var(--charcoal);
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ── QUICK HIGHLIGHTS ── */
+        .highlights-section {
+            background: var(--blush);
+        }
+
+        .highlights-header {
+            margin-bottom: 48px;
+        }
+
+        .highlights-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+
+        .highlights-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-card {
+            background: var(--cream);
+            padding: 32px 28px;
+            border: 1px solid var(--card-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(184, 92, 74, 0.1);
+        }
+
+        .highlight-card-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--terracotta);
+            font-weight: 300;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .highlight-card-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        .highlight-card-text {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ── ABOUT ── */
+        .about-section {}
+
+        /* ── EXPERIENCE ── */
+        .experience-section {
+            background: var(--blush);
+        }
+
+        .exp-teaser {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--terracotta);
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
+        .exp-grid {
+            margin-top: 56px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .exp-card {
+            background: var(--cream);
+            padding: 32px 28px;
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .exp-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .exp-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .exp-org {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 400;
+        }
+
+        .exp-role {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .exp-desc {
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* ── PROJECTS ── */
+        .projects-section {}
+
+        .projects-header {
+            margin-bottom: 48px;
+        }
+
+        .projects-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+
+        .projects-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 480px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* folder card */
+        .project-card {
+            background: var(--cream);
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(184, 92, 74, 0.12);
+        }
+
+        .folder-visual {
+            height: 140px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .folder-icon {
+            width: 80px;
+            height: 66px;
+            position: relative;
+        }
+
+        .folder-icon .folder-back {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 56px;
+            background: var(--folder-pink);
+            border-radius: 0 4px 4px 4px;
+        }
+
+        .folder-icon .folder-tab {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 16px;
+            background: var(--folder-pink);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .folder-icon .folder-shine {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .project-info {
+            padding: 24px 24px 28px;
+        }
+
+        .project-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ── CERTIFICATIONS ── */
+        .certs-section {
+            background: var(--blush);
+        }
+
+        .certs-header {
+            margin-bottom: 48px;
+        }
+
+        .certs-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--terracotta);
+        }
+
+        .certs-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .cert-item {
+            background: var(--cream);
+            padding: 20px 24px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: transform 0.2s;
+        }
+
+        .cert-item:hover {
+            transform: translateX(4px);
+        }
+
+        .cert-check {
+            width: 28px;
+            height: 28px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 12px;
+        }
+
+        .cert-name {
+            font-size: 13.5px;
+            color: var(--charcoal);
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            text-align: left;
+            padding: 100px 60px;
+        }
+
+        .cta-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 4.5vw, 58px);
+            font-weight: 400;
+            color: var(--terracotta);
+            line-height: 1.25;
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            background: var(--blush);
+            padding: 80px 60px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-left {}
+
+        .contact-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+        }
+
+        .contact-text {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 380px;
+        }
+
+        .contact-right {}
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .contact-row:first-child {
+            border-top: 1px solid var(--card-border);
+        }
+
+        .contact-row-label {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        .contact-row-val {
+            font-size: 14px;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-row-val:hover {
+            color: var(--terracotta);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--cream);
+            padding: 48px 60px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer-left {}
+
+        .footer-name {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+        }
+
+        .footer-meta {
+            font-size: 12.5px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .footer-linkedin {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            margin-top: 12px;
+            font-weight: 500;
+            letter-spacing: 0;
+            transition: background 0.2s;
+        }
+
+        .footer-linkedin:hover {
+            background: var(--terracotta-light);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .footer-nav a {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            text-align: right;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--terracotta);
+        }
+
+        /* ── DIVIDER ── */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--terracotta);
+            margin-bottom: 48px;
+            opacity: 0.4;
+        }
+
+        /* ── SCROLL FADE IN ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            nav {
+                padding: 20px 32px;
+            }
+
+            section {
+                padding: 60px 32px;
+            }
+
+            .hero {
+                padding: 48px 32px 64px;
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-image-wrap {
+                display: none;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .exp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certs-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-right {
+                align-items: flex-start;
+            }
+
+            .footer-nav a {
+                text-align: left;
+            }
+
+            .cta-section {
+                padding: 72px 32px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            section {
+                padding: 48px 20px;
+            }
+
+            .hero {
+                padding: 36px 20px 52px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certs-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            footer {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <a href="#" class="nav-name">Manasa Harikrishnan</a>
+        <ul class="nav-links">
+            <li><a href="#about" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text fade-in">
+            <p class="hero-eyebrow">Marketing · Content Strategy · Communications</p>
+            <h1 class="hero-headline">
+                Turning strategy<br>
+                and <em>storytelling</em><br>
+                into meaningful<br>
+                connections.
+            </h1>
+            <p class="hero-intro">
+                Mass Communication student specializing in digital marketing, audience research, and strategic
+                storytelling. Experienced in developing communication frameworks, social media strategies, and
+                insight-driven content for nonprofit and youth organizations.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View My Work →</a>
+                <a href="#" class="btn-outline">Download Resume</a>
+            </div>
+        </div>
+        <div class="hero-image-wrap fade-in" style="transition-delay:0.15s">
+            <div class="hero-photo-placeholder">
+                <!-- Replace with: <img src="your-photo.jpg" alt="Manasa Harikrishnan"> -->
+                <span class="placeholder-text">Your Photo Here</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK HIGHLIGHTS -->
+    <section class="highlights-section" id="highlights">
+        <div class="highlights-header fade-in">
+            <p class="section-label">Quick Highlights</p>
+            <h2 class="highlights-title">What I bring to the table</h2>
+            <p class="highlights-sub">A snapshot of my core experience, skills, and areas of focus in marketing, digital
+                communication, and strategic content development.</p>
+        </div>
+        <div class="highlights-grid">
+            <div class="highlight-card fade-in" style="transition-delay:0.05s">
+                <div class="highlight-card-num">01</div>
+                <div class="highlight-card-title">Professional Experience</div>
+                <p class="highlight-card-text">Hands-on experience in marketing, PR, and communications through
+                    internships with nonprofit and youth-focused organizations.</p>
+            </div>
+            <div class="highlight-card fade-in" style="transition-delay:0.1s">
+                <div class="highlight-card-num">02</div>
+                <div class="highlight-card-title">Marketing Strategy Projects</div>
+                <p class="highlight-card-text">Academic projects focused on campaign planning, consumer research, and
+                    brand positioning.</p>
+            </div>
+            <div class="highlight-card fade-in" style="transition-delay:0.15s">
+                <div class="highlight-card-num">03</div>
+                <div class="highlight-card-title">Digital Marketing Skills</div>
+                <p class="highlight-card-text">Foundational knowledge in SEO, email marketing, social media strategy,
+                    and digital analytics.</p>
+            </div>
+            <div class="highlight-card fade-in" style="transition-delay:0.2s">
+                <div class="highlight-card-num">04</div>
+                <div class="highlight-card-title">Content & PR Strategy</div>
+                <p class="highlight-card-text">Experience developing storytelling frameworks, communication narratives,
+                    and digital content strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="two-col fade-in">
+            <div>
+                <p class="two-col-label">01 — Introduction</p>
+            </div>
+            <div class="two-col-content">
+                <p>Hey, I'm Manasa! I'm a Mass Communication student with a strong interest in marketing strategy,
+                    audience research, and digital storytelling. My work focuses on understanding how brands communicate
+                    with audiences and how strategic content can influence engagement and perception.</p>
+                <br>
+                <p>Through internships and academic projects, I have gained experience in communication strategy,
+                    content development, and marketing analysis — particularly within nonprofit and youth-focused
+                    organizations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section" id="experience">
+        <div class="two-col fade-in">
+            <div>
+                <p class="two-col-label">02 — Experience</p>
+            </div>
+            <div>
+                <p class="exp-teaser">Want to see where I've made an impact? Look below for details.</p>
+            </div>
+        </div>
+
+        <div class="exp-grid">
+            <div class="exp-card fade-in" style="transition-delay:0.05s">
+                <div class="exp-card-top">
+                    <div class="exp-dot"></div>
+                    <span class="exp-org">Young Leaders India</span>
+                </div>
+                <div class="exp-role">Communications Intern</div>
+                <p class="exp-desc">Developed a two-month social media strategy focused on leadership and governance
+                    positioning. Created content pillars, designed a platform strategy for LinkedIn and Instagram, and
+                    structured a content calendar to test engagement patterns.</p>
+            </div>
+            <div class="exp-card fade-in" style="transition-delay:0.1s">
+                <div class="exp-card-top">
+                    <div class="exp-dot"></div>
+                    <span class="exp-org">Paranubhuti Foundation</span>
+                </div>
+                <div class="exp-role">Content Strategy & PR Intern</div>
+                <p class="exp-desc">Developed leadership PR narratives and communication frameworks to strengthen
+                    organizational positioning. Created press-style content and messaging assets for digital and print
+                    platforms.</p>
+            </div>
+            <div class="exp-card fade-in" style="transition-delay:0.15s">
+                <div class="exp-card-top">
+                    <div class="exp-dot"></div>
+                    <span class="exp-org">Kshitiksha Foundation</span>
+                </div>
+                <div class="exp-role">Content Writing & Marketing Intern</div>
+                <p class="exp-desc">Created social media content focused on mental health, sustainability, and social
+                    awareness. Conducted audience research to support impactful storytelling and campaign messaging.</p>
+            </div>
+            <div class="exp-card fade-in" style="transition-delay:0.2s">
+                <div class="exp-card-top">
+                    <div class="exp-dot"></div>
+                    <span class="exp-org">InAmigos Foundation</span>
+                </div>
+                <div class="exp-role">Copywriter Intern</div>
+                <p class="exp-desc">Developed articles and social media content for awareness campaigns. Conducted
+                    background research and refined messaging for clarity and engagement across digital platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section" id="projects">
+        <div class="projects-header fade-in">
+            <p class="section-label">03 — Featured Work</p>
+            <h2 class="projects-title">Selected Projects</h2>
+            <p class="projects-sub">Selected projects showcasing my work in marketing strategy, audience research, and
+                digital communication.</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Card 1 -->
+            <div class="project-card fade-in" style="transition-delay:0.05s">
+                <div class="folder-visual">
+                    <div class="folder-icon">
+                        <div class="folder-tab"></div>
+                        <div class="folder-back"></div>
+                        <div class="folder-shine">✦</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">ECOHAVEN — Digital Marketing Strategy</div>
+                    <p class="project-desc">Developed a full-funnel marketing strategy for a vegan apparel brand
+                        including customer personas, social listening insights, competitor benchmarking, and pricing
+                        recommendations.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="project-card fade-in" style="transition-delay:0.1s">
+                <div class="folder-visual">
+                    <div class="folder-icon">
+                        <div class="folder-tab"></div>
+                        <div class="folder-back"></div>
+                        <div class="folder-shine">✦</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">GoPro × L'Oréal Brand Collaboration</div>
+                    <p class="project-desc">Designed a hypothetical brand collaboration including product positioning,
+                        pricing strategy, packaging concepts, and marketing strategy using the AIDA model.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="project-card fade-in" style="transition-delay:0.15s">
+                <div class="folder-visual">
+                    <div class="folder-icon">
+                        <div class="folder-tab"></div>
+                        <div class="folder-back"></div>
+                        <div class="folder-shine">✦</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">Folée Cupcake Brand — Media Planning</div>
+                    <p class="project-desc">Conceptualized a premium dessert brand and created a 12-month integrated
+                        marketing communications plan including digital campaigns, influencer collaborations, and
+                        experiential activations.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="project-card fade-in" style="transition-delay:0.2s">
+                <div class="folder-visual">
+                    <div class="folder-icon">
+                        <div class="folder-tab"></div>
+                        <div class="folder-back"></div>
+                        <div class="folder-shine">✦</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-title">Actor Prepares — Social Media Analysis</div>
+                    <p class="project-desc">Conducted a case study analyzing the digital presence of Actor Prepares
+                        using social listening tools and competitive benchmarking to assess engagement and strategy.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="certs-section" id="certifications">
+        <div class="certs-header fade-in">
+            <p class="section-label">04 — Certifications</p>
+            <h2 class="certs-title">Credentials & Learning</h2>
+        </div>
+        <div class="certs-list">
+            <div class="cert-item fade-in" style="transition-delay:0.05s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">Google Digital Marketing & E-commerce Certificate</span>
+            </div>
+            <div class="cert-item fade-in" style="transition-delay:0.08s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">AI and Business Strategy — LinkedIn Learning</span>
+            </div>
+            <div class="cert-item fade-in" style="transition-delay:0.11s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">Email Marketing — Mailchimp</span>
+            </div>
+            <div class="cert-item fade-in" style="transition-delay:0.14s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">Search Engine Optimization — Moz</span>
+            </div>
+            <div class="cert-item fade-in" style="transition-delay:0.17s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">Social Media Marketing — Hootsuite</span>
+            </div>
+            <div class="cert-item fade-in" style="transition-delay:0.2s">
+                <div class="cert-check">✓</div>
+                <span class="cert-name">Excel for Business Analysts</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section fade-in">
+        <h2 class="cta-heading">Like what you are seeing? Drop me a message and I'll get back to you in no time.</h2>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn-primary">Get in Touch Today →</a>
+            <a href="https://www.linkedin.com/in/manasa-harikrishnan" target="_blank" class="btn-outline">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-left fade-in">
+                <p class="section-label">05 — Contact</p>
+                <h2 class="contact-title">Let's Connect</h2>
+                <p class="contact-text">Interested in collaborating or discussing marketing and communication projects?
+                    Feel free to connect with me.</p>
+            </div>
+            <div class="contact-right fade-in" style="transition-delay:0.1s">
+                <div class="contact-items">
+                    <div class="contact-row">
+                        <span class="contact-row-label">Email</span>
+                        <a href="mailto:manasa27082005@gmail.com" class="contact-row-val">manasa27082005@gmail.com</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-row-label">Phone</span>
+                        <a href="tel:+918606241692" class="contact-row-val">+91 8606241692</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-row-label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/manasa-harikrishnan" target="_blank"
+                            class="contact-row-val">linkedin.com/in/manasa-harikrishnan</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-row-label">Location</span>
+                        <span class="contact-row-val">Palakkad, Kerala, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <div class="footer-name">Manasa Harikrishnan</div>
+            <div class="footer-meta">
+                Palakkad, Kerala, India &nbsp;|&nbsp; +91 8606241692 &nbsp;|&nbsp; manasa27082005@gmail.com<br>
+                © Manasa Harikrishnan, 2024
+            </div>
+            <a href="https://www.linkedin.com/in/manasa-harikrishnan" target="_blank" class="footer-linkedin"
+                title="LinkedIn">in</a>
+        </div>
+        <div class="footer-right">
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact me</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Scroll fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Activate on load for hero
+        document.querySelectorAll('.hero .fade-in').forEach(el => {
+            setTimeout(() => el.classList.add('visible'), 100);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 100) current = s.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
