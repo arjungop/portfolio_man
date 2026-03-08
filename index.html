@@ -422,30 +422,9 @@
             });
         }
 
-        // Theme Toggle Logic
-        const themeBtn = document.getElementById('theme-toggle-btn');
-        if (themeBtn) {
-            themeBtn.addEventListener('click', () => {
-                const html = document.documentElement;
-                if (html.getAttribute('data-theme') === 'dark') {
-                    html.removeAttribute('data-theme');
-                    themeBtn.innerHTML = '🌙';
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    html.setAttribute('data-theme', 'dark');
-                    themeBtn.innerHTML = '☀️';
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
-
-            // Load saved theme
-            if (localStorage.getItem('theme') === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeBtn.innerHTML = '☀️';
-            }
-        }
-
     </script>
+
+
 
 
 </body>
