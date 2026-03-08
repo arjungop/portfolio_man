@@ -907,11 +907,11 @@
             }
         }
 /* --- PREMIUM FOLDER UI AESTHETICS --- */
-.projects-grid, .exp-grid {
+.projects-grid, .experience-section .exp-grid {
     gap: 40px 24px;
 }
 
-.project-card, .exp-card {
+.project-card, .experience-section .exp-card {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -930,7 +930,7 @@
     cursor: pointer;
 }
 
-.project-info, .exp-card-toggle {
+.project-info, .experience-section .exp-card-toggle {
     background: var(--cream);
     padding: 32px 28px !important;
     border: 1px solid var(--card-border);
@@ -949,7 +949,7 @@
     align-self: flex-start;
 }
 
-.project-card::before, .exp-card::before {
+.project-card::before, .experience-section .exp-card::before {
     content: '';
     position: absolute;
     top: -28px;
@@ -966,7 +966,7 @@
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
 }
 
-.project-card::after, .exp-card::after {
+.project-card::after, .experience-section .exp-card::after {
     content: '';
     position: absolute;
     top: 6px;
@@ -982,26 +982,26 @@
 
 /* Hover interactions */
 .project-card:hover .project-info, 
-.exp-card:hover .exp-card-toggle {
+.experience-section .exp-card:hover .exp-card-toggle {
     transform: translateY(-8px) translateX(-4px);
     background: #ffffff;
 }
 
 .project-card:hover::before,
-.exp-card:hover::before {
+.experience-section .exp-card:hover::before {
     transform: translateY(-8px) translateX(-4px);
     background: #ffffff;
 }
 
 .project-card:hover::after,
-.exp-card:hover::after {
+.experience-section .exp-card:hover::after {
     transform: translateY(4px) translateX(4px);
     background: var(--folder-pink);
     opacity: 0.3;
 }
 
 /* Expanded state for exp-card */
-.exp-card.expanded {
+.experience-section .exp-card.expanded {
     background: var(--cream) !important;
     border: 1px solid var(--card-border) !important;
     border-radius: 12px;
@@ -1010,11 +1010,11 @@
     box-shadow: 0 20px 40px rgba(184, 92, 74, 0.08) !important;
 }
 
-.exp-card.expanded::before, .exp-card.expanded::after {
+.experience-section .exp-card.expanded::before, .experience-section .exp-card.expanded::after {
     display: none !important;
 }
 
-.exp-card.expanded .exp-card-toggle {
+.experience-section .exp-card.expanded .exp-card-toggle {
     background: transparent;
     border: none;
     border-bottom: 1px dashed var(--card-border);
@@ -1022,7 +1022,7 @@
     transform: none !important;
     padding-bottom: 24px !important;
 }
-.exp-card.expanded .exp-details {
+.experience-section .exp-card.expanded .exp-details {
     background: transparent;
     border: none;
     padding: 0 28px 32px;
@@ -1073,19 +1073,19 @@ html[data-theme='dark'] .hero-photo-placeholder::after {
 }
 
 html[data-theme='dark'] .project-info, 
-html[data-theme='dark'] .exp-card-toggle {
+html[data-theme='dark'] .experience-section .exp-card-toggle {
     background: var(--cream);
 }
 html[data-theme='dark'] .project-card:hover .project-info, 
-html[data-theme='dark'] .exp-card:hover .exp-card-toggle {
+html[data-theme='dark'] .experience-section .exp-card:hover .exp-card-toggle {
     background: var(--blush);
 }
 html[data-theme='dark'] .project-card::before, 
-html[data-theme='dark'] .exp-card::before {
+html[data-theme='dark'] .experience-section .exp-card::before {
     background: var(--cream);
 }
 html[data-theme='dark'] .project-card:hover::before,
-html[data-theme='dark'] .exp-card:hover::before {
+html[data-theme='dark'] .experience-section .exp-card:hover::before {
     background: var(--blush);
 }
 
