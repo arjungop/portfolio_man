@@ -608,18 +608,35 @@ section {
 }
 
 .cert-item {
-    padding: 0;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    transition: transform 0.2s;
-    background: transparent;
-    border: none;
+    gap: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(182, 140, 120, 0.15);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(185, 92, 74, 0.03) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .cert-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(182, 140, 120, 0.3);
+    box-shadow: 0 12px 24px rgba(44, 40, 37, 0.08);
 }
 
 .cert-check {
@@ -627,51 +644,67 @@ section {
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
-    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
+    padding: 8px;
+    background: rgba(185, 92, 74, 0.08);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.cert-check img {
+    filter: drop-shadow(0 2px 4px rgba(44, 40, 37, 0.06));
 }
 
 .cert-content {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
 .cert-name {
     font-size: 15px;
     color: var(--charcoal);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4;
     text-decoration: none;
 }
 
 .cert-issuer {
-    font-size: 14px;
-    color: var(--muted);
-    font-weight: 400;
+    font-size: 13px;
+    color: var(--terracotta);
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 .cert-link {
-    margin-top: 12px;
-    font-size: 13.5px;
+    margin-top: 8px;
+    font-size: 12.5px;
     color: var(--terracotta);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    transition: opacity 0.2s;
+    gap: 6px;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .cert-link:hover {
-    opacity: 0.8;
+    color: var(--terracotta-light);
 }
 
 .cert-link svg {
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
+    stroke-width: 2.5;
 }
 
 .cert-link:hover svg {
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 
 @media (max-width: 992px) {
